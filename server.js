@@ -21,7 +21,7 @@ conf = {
     // look for PORT environment variable,
     // else look for CLI argument,
     // else use hard coded value for port 8080
-    port: process.env.PORT || process.argv[2] || 8080,
+    port: process.env.PORT || process.argv[2] || 4200,
     // origin undefined handler
     // see https://github.com/expressjs/cors/issues/71
     originUndefined: function (req, res, next) {
@@ -53,8 +53,6 @@ conf = {
 // use origin undefined handler, then cors for all paths
 app.use(conf.originUndefined, cors(conf.cors));
 
-
-
 // Configuring the database
 const config = require('./config.js');
 const mongoose = require('mongoose');
@@ -77,7 +75,8 @@ app.get('/', (req, res) => {
     res.json({"message": "Fdbsrv Product app"});
 });
 
-// listen on port 3000
-app.listen(process.env.PORT || config.serverport, () => {
-    console.log("Server is listening on port 3000 or process prot");
+// set port, listen for requests
+const PORT = process.env.PORT || config.serverport;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });

@@ -23,7 +23,7 @@ const config = require('./config.js');
 const mongoose = require('mongoose');
 require('./product.routes.js')(app);
 mongoose.Promise = global.Promise;
-/*
+
 mongoose.connect(config.url, {
     useNewUrlParser: true
 }).then(() => {
@@ -32,7 +32,7 @@ mongoose.connect(config.url, {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
-*/
+
 
 // default route
 app.get('/', (req, res) => {

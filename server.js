@@ -78,6 +78,6 @@ app.get('/', (req, res) => {
 });
 
 // listen on port 3000
-app.listen(config.serverport, () => {
-    console.log("Server is listening on port 3000");
+app.listen(process.env.PORT || config.serverport, () => {
+    console.log("Server is listening on port 3000 or process prot");
 });

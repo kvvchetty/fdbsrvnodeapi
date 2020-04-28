@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
+/*
 const config = require('./config.js');
 const mongoose = require('mongoose');
 require('./product.routes.js')(app);
@@ -32,11 +32,18 @@ mongoose.connect(config.url, {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
-
+*/
 
 // default route
 app.get('/', (req, res) => {
     res.json({"message": "Fdbsrv Product app"});
+});
+
+app.get('/products', (req, res) => {
+    res.json( {"_id":"5ea5939b9c67412ac0b9f943","title":"mrchntcc",
+      "description":"Credit Card","price":100,"company":"home depo",
+      "createdAt":"2020-04-26T13:58:51.766Z","updatedAt":"2020-04-26T13:58:51.766Z","__v":0}
+      );
 });
 
 // set port, listen for requests

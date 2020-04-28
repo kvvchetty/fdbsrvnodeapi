@@ -18,11 +18,12 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-/*
+
 const config = require('./config.js');
 const mongoose = require('mongoose');
 require('./product.routes.js')(app);
 mongoose.Promise = global.Promise;
+/*
 mongoose.connect(config.url, {
     useNewUrlParser: true
 }).then(() => {

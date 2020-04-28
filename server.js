@@ -40,10 +40,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-    res.json( {"_id":"5ea5939b9c67412ac0b9f943","title":"mrchntcc",
+  var data = []
+        data.push({"_id":"5ea5939b9c67412ac0b9f943","title":"mrchntcc",
       "description":"Credit Card","price":100,"company":"home depo",
-      "createdAt":"2020-04-26T13:58:51.766Z","updatedAt":"2020-04-26T13:58:51.766Z","__v":0}
-      );
+      "createdAt":"2020-04-26T13:58:51.766Z","updatedAt":"2020-04-26T13:58:51.766Z","__v":0});
+        data.push({"_id":"5ea5939b9c67412ac0b9f942","title":"mrchntcc2",
+      "description":"Credit Card2","price":200,"company":"home2 depo",
+      "createdAt":"2020-04-26T13:58:51.766Z","updatedAt":"2020-04-26T13:58:51.766Z","__v":0});
+      res.json(data);  
 });
 
 // set port, listen for requests
